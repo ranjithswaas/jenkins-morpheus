@@ -2,7 +2,7 @@ import groovy.json.JsonOutput
 
 node {
 
-def utilities = load pwd() + '/GroovyClient/morpheusApp.groovy'
+def utilities = load pwd() + '/vars/morpheusApp.groovy'
 
 stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
