@@ -1,26 +1,9 @@
 #! /usr/bin/groovy
 package GroovyClient
-import groovy.json.JsonBuilder
+
 import groovy.json.JsonBuilder
 @Grab("org.jodd:jodd-http:3.8.5")
 import jodd.http.HttpRequest
-
-def buildApp(String morpheusUrl, Map<?, ?> postBody, String bearerToken) {
-	String jsoncontent = new JsonBuilder(postBody).toString()
-	JenkinsHttpClient http = new JenkinsHttpClient()
-	http.postJson(morpheusUrl, postBody, bearerToken)
-}
-
-def getApp(String morpheusUrl, String bearerToken) {
-	JenkinsHttpClient http = new JenkinsHttpClient()
-	http.get(morpheusUrl, bearerToken)
-}
-
-def deleteApp(String morpheusUrl, String bearerToken) {
-	JenkinsHttpClient http = new JenkinsHttpClient()
-	http.delete(morpheusUrl, bearerToken)
-}
-
 
 /**
  * Helper class for making REST calls from a Jenkins Pipeline job.
@@ -76,8 +59,3 @@ class JenkinsHttpClient {
         return resp.bodyText()
     }
 }
-
-
-return [
-	buildApp: this.&buildApp
-]
