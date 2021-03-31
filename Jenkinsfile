@@ -1,4 +1,4 @@
-import groovy.json.JsonOutpput
+import groovy.json.JsonOutput
 
 node {
 
