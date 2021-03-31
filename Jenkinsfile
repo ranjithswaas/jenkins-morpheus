@@ -1548,7 +1548,7 @@ stage('Clone repository') {
 ]
 
 
-echo buildApp(morpheusUrl, postBody, "${bearer}")
+echo JenkinsClient.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
 }
