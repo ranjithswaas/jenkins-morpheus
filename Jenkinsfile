@@ -2,11 +2,16 @@ import groovy.json.JsonOutpput
 
 node {
 
+stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
+    }
        
 
-    stage('Provision Dev App') {
+    stage('Creating Morpheus Blueprint ') {
 
-        // withCredentials([string(credentialsId: 'f54030f5-c407-48b6-94e6-4e388020e211', variable: 'bearer')]) {
+        withCredentials([string(credentialsId: 'tokenid', variable: 'bearer')]) {
             String morpheusUrl = 'https://devlmorph001.techlab.com/api/blueprints'
 
             Map<?, ?> postBody = [
@@ -1540,13 +1545,7 @@ node {
   ]
 ]
 
-string bearerToken = 'f54030f5-c407-48b6-94e6-4e388020e211'
- String jsonbody = new JsonBuilder(postBody).toString()
- String token = 'BEARER' + bearerToken
- def resp = httpRequest.post(morpheusUrl)
-            .header('Authorization', token)
-            .contentType('application/json')
-                .body(jsonbody)
-                .send()
+echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
+}
