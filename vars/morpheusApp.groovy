@@ -16,3 +16,7 @@ def deleteApp(String morpheusUrl, String bearerToken) {
 	JenkinsHttpClient http = new JenkinsHttpClient()
 	http.delete(morpheusUrl, bearerToken)
 }
+
+return [
+	buildApp: this.&buildApp
+]
