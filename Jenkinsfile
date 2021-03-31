@@ -1,5 +1,5 @@
 import groovy.json.JsonOutput
-
+import vars
 node {
 
 stage('Clone repository') {
