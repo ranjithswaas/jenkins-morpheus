@@ -1,5 +1,4 @@
 import groovy.json.JsonOutput
-import vars.morpheusApp
 
 node {
 
