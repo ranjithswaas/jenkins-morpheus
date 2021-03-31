@@ -76,3 +76,8 @@ class JenkinsHttpClient {
         return resp.bodyText()
     }
 }
+
+
+return [
+	buildApp: this.&buildApp
+]
