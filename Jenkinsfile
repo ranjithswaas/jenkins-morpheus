@@ -1,4 +1,5 @@
 import groovy.json.JsonOutput
+import vars.morpheusApp
 
 node {
 
@@ -1545,7 +1546,7 @@ stage('Clone repository') {
   ]
 ]
 
-echo vars.morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
 }
