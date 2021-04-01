@@ -1,5 +1,5 @@
 import groovy.json.JsonBuilder
-import GroovyClient.JenkinsClient
+import org.GroovyClient.JenkinsClient
 
 def buildApp(String morpheusUrl, Map<?, ?> postBody, String bearerToken) {
 	String jsoncontent = new JsonBuilder(postBody).toString()
