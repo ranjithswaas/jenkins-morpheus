@@ -1,5 +1,5 @@
 
-package src.org.GroovyClient
+package org.GroovyClient
 
 import groovy.json.JsonBuilder
 @Grab("org.jodd:jodd-http:3.8.5")
