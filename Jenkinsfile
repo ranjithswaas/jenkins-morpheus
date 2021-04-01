@@ -6,7 +6,7 @@ import groovy.json.JsonOutput
 import groovy.json.JsonBuilder
 
 node {
-
+script{
 def buildApp(String morpheusUrl, Map<?, ?> postBody, String bearerToken) {
 	String jsoncontent = new JsonBuilder(postBody).toString()
 	
@@ -23,7 +23,7 @@ def buildApp(String morpheusUrl, Map<?, ?> postBody, String bearerToken) {
                 .send()
         return resp.bodyText()
     }
-
+}
 stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
