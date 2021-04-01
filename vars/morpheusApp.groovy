@@ -17,6 +17,4 @@ def deleteApp(String morpheusUrl, String bearerToken) {
 	http.delete(morpheusUrl, bearerToken)
 }
 
-return [
-	buildApp: this.&buildApp
-]
+return this;

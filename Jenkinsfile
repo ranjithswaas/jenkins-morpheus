@@ -2,7 +2,7 @@ import groovy.json.JsonOutput
 
 node {
 
-def morpheusApp = [];
+def utilities = load 'vars/morpheusApp.groovy'
 
 stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -94,7 +94,7 @@ stage('Clone repository') {
 ]
 
 
-echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+echo utilities.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
 }
