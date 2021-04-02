@@ -7,6 +7,6 @@ def buildApp(String morpheusUrl, Map<?, ?> postBody, String bearerToken) {
 	http.postJson(morpheusUrl, postBody, bearerToken)
 }
  
-}
+
 
 return this;
