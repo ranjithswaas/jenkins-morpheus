@@ -2,7 +2,7 @@ import groovy.json.JsonOutput
 
 node {
 
-def utilities = load 'src/org/GroovyClient/JenkinsHttpClient.groovy'
+def utilities = load 'vars/morpheusApp.groovy'
 
 stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
