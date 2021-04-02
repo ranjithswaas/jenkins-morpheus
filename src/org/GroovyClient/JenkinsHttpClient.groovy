@@ -2,7 +2,7 @@
 package org.GroovyClient
 
 import groovy.json.JsonBuilder
-@Grab("org.jodd:jodd-http:3.8.5")
+
 import jodd.http.HttpRequest
 
 /**
