@@ -8,26 +8,13 @@ import jodd.http.HttpRequest
 /**
  * Helper class for making REST calls from a Jenkins Pipeline job.
  */
-class JenkinsHttpClient {
+public class JenkinsHttpClient {
 
     private HttpRequest httpRequest
     
     JenkinsHttpClient() {
         httpRequest = new HttpRequest()
-    }
-
-    /**
-     * GET method
-     * @param url
-     * @return response body as String
-     */
-    def get(String url, String bearerToken) {
-	String token = 'BEARER' + bearerToken
-        def resp = httpRequest.get(url)
-                .header('Authorization', token)
-                .send()
-        return resp.bodyText()
-    }
+    } 
 
     /**
      * POST method, convert body Map to applicationjson.
@@ -42,19 +29,6 @@ class JenkinsHttpClient {
                 .header('Authorization', token)
                 .contentType('application/json')
                 .body(jsonbody)
-                .send()
-        return resp.bodyText()
-    }
-
-    /**
-     * DELETE method
-     * @param url
-     * @return
-     */
-    def delete(String url, String bearerToken) {
-	String token = 'BEARER' + bearerToken
-        def resp = httpRequest.delete(url)
-                .header('Authorization', token)
                 .send()
         return resp.bodyText()
     }
