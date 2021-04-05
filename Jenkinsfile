@@ -94,8 +94,8 @@ stage('Clone repository') {
   ]
 ]
 
-echo bearer
-println bearer
+echo "${bearer}"
+println "${bearer}"
 echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
