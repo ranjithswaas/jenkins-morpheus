@@ -1,6 +1,6 @@
 @Library('jenkins-pipeline-shared-lib')_
 import groovy.json.JsonOutput
-
+import groovy.json.JsonBuilder 
 node {
 
  
@@ -88,8 +88,10 @@ stage('Clone repository') {
     "isVpcSelectable": false
   ]
 ] 
+String jsonbody = new JsonBuilder(postBody).toString()
 
 
+println jsonbody
 def apiToken = '4e996abc-cbc1-4244-84f4-f5f5126a56ef'
 println apiToken
 echo morpheusApp.buildApp(morpheusUrl, postBody, apiToken)
