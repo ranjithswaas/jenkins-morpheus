@@ -18,8 +18,8 @@ stage('Clone repository') {
             String morpheusUrl = 'http://devlmorph001.techlab.com/api/blueprints'
 
             Map<?, ?> postBody = [
-  "name": "sample",
-  "description": "A sample blueprint",
+  "name": "Polaris-Automated",
+  "description": "Blueprint created from jenkins pipeline",
   "type": "morpheus",
   "tiers": [
     "Web": [
