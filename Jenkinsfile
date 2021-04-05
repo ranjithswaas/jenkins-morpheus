@@ -93,8 +93,8 @@ stage('Clone repository') {
     "isVpcSelectable": false
   ]
 ]
-
-def token = morpheusUrl
+println printing token
+def token = "${bearer}"
 println token
 echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
