@@ -94,7 +94,7 @@ stage('Clone repository') {
   ]
 ]
 
-def token = "${bearer}"
+def token = morpheusUrl
 println token
 echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
