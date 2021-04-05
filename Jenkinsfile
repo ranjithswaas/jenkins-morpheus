@@ -1,6 +1,6 @@
 @Library('jenkins-pipeline-shared-lib')_
 import groovy.json.JsonOutput
-import groovy.json.JsonBuilder 
+
 node {
 
  
@@ -26,7 +26,12 @@ stage('Clone repository') {
       "instances": [
         [
           "instance": [
+            "cloud": "AWS",
             "type": "tomcat",
+            "layout": [
+              "code": "tomcat-amazon-7.0.62-single",
+              "id": 616
+            ]
           ],
           "config": [
             "publicIpType": "subnet",
@@ -87,9 +92,9 @@ stage('Clone repository') {
     "isEC2": false,
     "isVpcSelectable": false
   ]
-]  
+] 
 
-echo morpheusApp.buildApp(morpheusUrl, postBody, apiToken)
+echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
 }
