@@ -26,12 +26,7 @@ stage('Clone repository') {
       "instances": [
         [
           "instance": [
-            "cloud": "AWS",
             "type": "tomcat",
-            "layout": [
-              "code": "tomcat-amazon-7.0.62-single",
-              "id": 616
-            ]
           ],
           "config": [
             "publicIpType": "subnet",
@@ -93,7 +88,10 @@ stage('Clone repository') {
     "isVpcSelectable": false
   ]
 ] 
+
+
 def apiToken = '4e996abc-cbc1-4244-84f4-f5f5126a56ef'
+println apiToken
 echo morpheusApp.buildApp(morpheusUrl, postBody, apiToken)
         }
     }
