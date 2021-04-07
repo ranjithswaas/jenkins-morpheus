@@ -3,6 +3,9 @@ import groovy.json.JsonOutput
 
 node {
 
+  environment{
+     tokenId = credentials('MorphToken');
+  }
 
     stage('Creating Morpheus Blueprint ') {
           
@@ -86,7 +89,7 @@ node {
   ]
 ] 
  
-echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+echo morpheusApp.buildApp(morpheusUrl, postBody, tokenId)
         }
     }
 }
