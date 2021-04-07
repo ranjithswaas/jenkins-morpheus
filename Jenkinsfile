@@ -84,9 +84,8 @@ node {
     "isVpcSelectable": false
   ]
 ] 
- def token = '4e996abc-cbc1-4244-84f4-f5f5126a56ef'
 
-echo morpheusApp.buildApp(morpheusUrl, postBody, token)
+echo morpheusApp.buildApp(morpheusUrl, postBody, '${bearer}')
         }
     }
 }
