@@ -10,7 +10,7 @@ node {
             String morpheusUrl = 'https://devlmorph001.techlab.com/api/blueprints'
 
             Map<?, ?> postBody = [
-  "name": "Polaris-Automated",
+  "name": "Polaris-AutomatedBlueprint",
   "description": "Blueprint created from jenkins pipeline",
   "type": "morpheus",
   "tiers": [
