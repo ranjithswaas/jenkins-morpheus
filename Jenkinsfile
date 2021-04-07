@@ -89,7 +89,7 @@ node {
   ]
 ] 
  
-echo morpheusApp.buildApp(morpheusUrl, postBody, tokenId)
+echo morpheusApp.buildApp(morpheusUrl, postBody, "${tokenId}")
         }
     }
 }
