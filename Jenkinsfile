@@ -85,8 +85,8 @@ node {
   ]
 ] 
  def token = '4e996abc-cbc1-4244-84f4-f5f5126a56ef'
-echo "'${bearer}'..."
-echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
+ 
+echo morpheusApp.buildApp(morpheusUrl, postBody, token)
         }
     }
 }
