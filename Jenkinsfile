@@ -15,7 +15,7 @@ stage('Clone repository') {
     stage('Creating Morpheus Blueprint ') {
           
         withCredentials([string(credentialsId: 'MorphToken', variable: 'bearer')]) {
-            String morpheusUrl = 'https://devlmorph001.techlab.com/api/blueprints'
+            String morpheusUrl = 'http://devlmorph001.techlab.com/api/blueprints'
 
             Map<?, ?> postBody = [
   "name": "Polaris-Automated",
