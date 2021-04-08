@@ -3,6 +3,14 @@ import groovy.json.JsonOutput
 
 node {
 
+
+
+    stage('Create Groups'){
+    
+        
+
+    }
+
     stage('Creating Morpheus Blueprint ') {
           
         withCredentials([string(credentialsId: 'MorphToken', variable: 'bearer')]) {
@@ -86,7 +94,7 @@ node {
                                   ] 
           
  
-          echo morpheusApp.buildApp(morpheusUrl, postBody, "$bearer")
+          echo morpheusApp.buildApp(morpheusUrl, postBody, '${bearer}')
         }
     }
 }
