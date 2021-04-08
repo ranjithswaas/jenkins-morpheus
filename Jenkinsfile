@@ -11,8 +11,10 @@ node {
             String groupsUrl = 'https://devlmorph001.techlab.com/api/groups'
             
              Map<?, ?> postBody = [
+                          "group":[
                           "name": "Polaris-Group",
                           "location": "US-East"
+                                  ]
              ]
 
              echo morpheusApp.buildApp(groupsUrl, postBody, "${bearer}")
