@@ -7,7 +7,16 @@ node {
 
     stage('Create Groups'){
     
-        
+        withCredentials([string(credentialsId: 'MorphToken', variable: 'bearer')]) {
+            String groupsUrl = 'https://devlmorph001.techlab.com/api/groups'
+            
+             Map<?, ?> postBody = [
+                          "name": "Polaris-Group",
+                          "location": "US-East"
+             ]
+
+             echo morpheusApp.buildApp(groupsUrl, postBody, "${bearer}")
+        }
 
     }
 
