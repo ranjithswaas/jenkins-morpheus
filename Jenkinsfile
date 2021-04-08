@@ -92,7 +92,7 @@ node {
                                     "isVpcSelectable": false
                                             ]
                                   ] 
-          def token = '${bearer}'
+          def token = "${bearer}"
  
           echo morpheusApp.buildApp(morpheusUrl, postBody, token)
         }
