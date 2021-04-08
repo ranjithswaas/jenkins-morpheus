@@ -94,7 +94,7 @@ node {
                                   ] 
            
  
-          echo morpheusApp.buildApp(morpheusUrl, postBody, ${bearer})
+          echo morpheusApp.buildApp(morpheusUrl, postBody, "${bearer}")
         }
     }
 }
