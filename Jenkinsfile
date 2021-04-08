@@ -7,8 +7,8 @@ node {
 
     stage('Create Groups'){
     
-        withCredentials([string(credentialsId: 'MorphToken', variable: 'bearer')]) {
-            String groupsUrl = 'https://devlmorph001.techlab.com/api/groups'
+        withCredentials([string(credentialsId: 'AWS_MORPHEUS_TOKEN', variable: 'bearer')]) {
+            String groupsUrl = 'https://ec2-3-222-190-135.compute-1.amazonaws.com/api/groups'
             
              Map<?, ?> postBody = [
                           "group":[
@@ -24,8 +24,8 @@ node {
 
     stage('Creating Morpheus Blueprint ') {
           
-        withCredentials([string(credentialsId: 'MorphToken', variable: 'bearer')]) {
-            String morpheusUrl = 'https://devlmorph001.techlab.com/api/blueprints'
+        withCredentials([string(credentialsId: 'AWS_MORPHEUS_TOKEN', variable: 'bearer')]) {
+            String morpheusUrl = 'https://ec2-3-222-190-135.compute-1.amazonaws.com/api/blueprints'
 
             Map<?, ?> postBody = [
                                   "name": "Polaris-AutomatedBlueprint",
